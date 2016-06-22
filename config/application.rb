@@ -14,8 +14,9 @@ module Mtchmkr
     config.generators do |generate|
       generate.helper false
       generate.javascript_engine false
-      generate.request_specs false
-      generate.routing_specs false
+      generate.controller_specs false
+      generate.request_specs true
+      generate.routing_specs true
       generate.stylesheets false
       generate.test_framework :rspec
       generate.view_specs false
