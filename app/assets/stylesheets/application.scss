@@ -6,4 +6,7 @@
 @import "neat";
 
 @import "base/base";
-@import "refills/flashes";
+
+body {
+  padding: 2em;
+}
