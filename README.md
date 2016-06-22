@@ -15,7 +15,7 @@ For example, if there are 4 Participants in the system ("Joe", "Vanessa", "Trevo
 
 ![screen shot 2016-06-22 at 1 42 33 pm](https://cloud.githubusercontent.com/assets/766658/16286821/b5bb9806-3893-11e6-91cb-14bece562b45.png)
 
-Also, since we're expecting to hire more people soon, it would be create to be able to create multiple participants at once. Please provide a way so that a user can input a text like "Aaliyah, Shae, Martin" and generate three participants at once.
+Also, since we're expecting to hire more people soon, it should be able to create multiple participants at once. Please provide a way so that a user can input a text like "Aaliyah, Shae, Martin" and generate three participants at once.
 
 # Recap
 
