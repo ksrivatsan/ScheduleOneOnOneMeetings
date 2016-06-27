@@ -45,6 +45,18 @@ class ParticipantsController < ApplicationController
     redirect_to participants_url, notice: "Participant was successfully destroyed."
   end
 
+  def scheduled_meeting
+    # @participants = Participant.all
+    @meetings = Participant.schedule_one_to_one
+  end
+
+  def add_more
+    params[:names].split(",").each do |participant_name|
+      participant = Participant.create(name:participant_name)
+    end
+    redirect_to scheduled_meeting_participants_url, notice: "Participants have been added to the schedule."
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

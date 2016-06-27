@@ -1,0 +1,30 @@
+<h1>Listing one on ones</h1>
+<div style="margin-left:20%;width:60%">
+  <%= form_tag add_more_participants_path do %>
+    <%= label_tag :names, 'Participants you would like to add' %>
+    <%= text_field_tag :names, nil, placeholder: "Enter comma seperated values" %>
+    <%= submit_tag "Add Participants", class: "btn pull-right btn-large btn-primary"%>
+  <% end %>
+</div>
+
+<table style="margin-left:20%;width:60%">
+  <% @meetings.each_with_index do |week_number,index| %>
+    <tr>
+      <th colspan="2">
+        <%= "Week #{index+1}" %>
+      </th>
+    </tr>
+    <tbody>
+      <% week_number.each do |meeting| %>
+        <tr>
+          <% meeting.each do |participant| %>
+            <td><%= participant %></td>
+          <% end %>  
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
+
+<br>
+<%= link_to 'Back', participants_path %>
