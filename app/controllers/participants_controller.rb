@@ -51,10 +51,16 @@ class ParticipantsController < ApplicationController
   end
 
   def add_more
+    participants_array = []
     params[:names].split(",").each do |participant_name|
-      participant = Participant.create(name:participant_name)
+      if Participant.where(name:participant_name)
+        participants_array << participant_name
+      else
+        participant = Participant.create(name:participant_name)
+      end
     end
-    redirect_to scheduled_meeting_participants_url, notice: "Participants have been added to the schedule."
+    @flash_message = participants_array.empty? ? "Congrats! Participant have been added to the schedule." : "Participants #{participants_array.join(" ")} are already present in the system!"
+    redirect_to scheduled_meeting_participants_url, notice: @flash_message
   end
 
   private

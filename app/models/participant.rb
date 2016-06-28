@@ -2,7 +2,7 @@ class Participant < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 2 }
 
   def self.find_meeting(all_scheduled_meetings, remaining_participants, current_weeks_meeting)
-    first_set_of_participants = remaining_participants.sample
+    first_set_of_participants = remaining_participants[0]
     unless first_set_of_participants.count.zero?
       current_weeks_meeting << first_set_of_participants 
     end
@@ -30,5 +30,5 @@ class Participant < ActiveRecord::Base
     end
     return all_weeks_schedule
   end
-
 end
+
